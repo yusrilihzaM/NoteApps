@@ -1,4 +1,4 @@
-package com.yusril.noteapps
+package com.yusril.consumerapp
 
 import android.app.Activity
 import android.content.Intent
@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.yusril.noteapps.databinding.ItemNoteBinding
-import com.yusril.noteapps.entity.Note
+import com.yusril.consumerapp.databinding.ItemNoteBinding
+import com.yusril.consumerapp.entity.Note
 
 class NoteAdapter(private val activity: Activity): RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
     var listNotes = ArrayList<Note>()

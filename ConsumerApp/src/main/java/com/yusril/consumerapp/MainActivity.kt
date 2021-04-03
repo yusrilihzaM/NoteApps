@@ -1,4 +1,4 @@
-package com.yusril.noteapps
+package com.yusril.consumerapp
 
 import android.content.Intent
 import android.database.ContentObserver
@@ -9,11 +9,12 @@ import android.os.HandlerThread
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
-import com.yusril.noteapps.databinding.ActivityMainBinding
-import com.yusril.noteapps.db.DatabaseContract.CONTENT_URI
-import com.yusril.noteapps.db.MappingHelper
-import com.yusril.noteapps.db.NoteHelper
-import com.yusril.noteapps.entity.Note
+import com.yusril.consumerapp.databinding.ActivityMainBinding
+import com.yusril.consumerapp.db.DatabaseContract.CONTENT_URI
+import com.yusril.consumerapp.db.MappingHelper
+import com.yusril.consumerapp.db.NoteHelper
+import com.yusril.consumerapp.entity.Note
+
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.title = "Notes"
+        supportActionBar?.title = "Consumer Notes"
         binding.rvNotes.layoutManager = LinearLayoutManager(this)
         binding.rvNotes.setHasFixedSize(true)
         adapter = NoteAdapter(this)
@@ -67,7 +68,7 @@ class MainActivity : AppCompatActivity() {
     private fun loadNotesAsync() {
         GlobalScope.launch(Dispatchers.Main) {
             binding.progressbar.visibility= View.VISIBLE
-            val noteHelper=NoteHelper.getInstance(applicationContext)
+            val noteHelper= NoteHelper.getInstance(applicationContext)
             noteHelper.open()
             val deferredNotes=async(Dispatchers.IO) {
 //                val cursor=noteHelper.queryAll()/// ambil data dari sqlite
@@ -80,7 +81,7 @@ class MainActivity : AppCompatActivity() {
             if (notes.size>0){
                 adapter.listNotes=notes
             }else{
-                adapter.listNotes= ArrayList()
+                adapter.listNotes= arrayListOf()
                 showSnackbarMessage("Tidak ada data saat ini")
             }
             noteHelper.close()

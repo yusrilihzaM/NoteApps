@@ -1,8 +1,8 @@
-package com.yusril.noteapps.db
+package com.yusril.consumerapp.db
 
 import android.net.Uri
 import android.provider.BaseColumns
-import com.yusril.noteapps.db.DatabaseContract.NoteColumns.Companion.TABLE_NAME
+import com.yusril.consumerapp.db.DatabaseContract.NoteColumns.Companion.TABLE_NAME
 
 object DatabaseContract {
     //content provider

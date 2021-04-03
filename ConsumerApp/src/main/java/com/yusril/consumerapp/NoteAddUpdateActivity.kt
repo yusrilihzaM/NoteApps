@@ -1,4 +1,4 @@
-package com.yusril.noteapps
+package com.yusril.consumerapp
 
 import android.content.ContentValues
 import android.content.Intent
@@ -10,14 +10,14 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.yusril.noteapps.databinding.ActivityNoteAddUpdateBinding
-import com.yusril.noteapps.db.DatabaseContract
-import com.yusril.noteapps.db.DatabaseContract.CONTENT_URI
-import com.yusril.noteapps.db.DatabaseContract.NoteColumns.Companion.DATE
-import com.yusril.noteapps.db.MappingHelper
+import com.yusril.consumerapp.databinding.ActivityNoteAddUpdateBinding
+import com.yusril.consumerapp.db.DatabaseContract
+import com.yusril.consumerapp.db.DatabaseContract.CONTENT_URI
+import com.yusril.consumerapp.db.DatabaseContract.NoteColumns.Companion.DATE
+import com.yusril.consumerapp.db.MappingHelper
 
-import com.yusril.noteapps.db.NoteHelper
-import com.yusril.noteapps.entity.Note
+import com.yusril.consumerapp.db.NoteHelper
+import com.yusril.consumerapp.entity.Note
 import java.text.SimpleDateFormat
 import java.util.*
 

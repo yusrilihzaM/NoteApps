@@ -1,7 +1,7 @@
-package com.yusril.noteapps.db
+package com.yusril.consumerapp.db
 
 import android.database.Cursor
-import com.yusril.noteapps.entity.Note
+import com.yusril.consumerapp.entity.Note
 
 object MappingHelper {
 
